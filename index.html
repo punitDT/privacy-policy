@@ -49,7 +49,13 @@
   <h2>2. Information We Collect</h2>
 
   <h3>2.1 Device Identifier</h3>
-  <p>We generate a random, anonymous device ID (UUID) to maintain conversation context between sessions. This ID is not linked to your name, email, or any personal account.</p>
+  <p>We generate a random, anonymous device ID (UUID) on first app launch to maintain conversation context between sessions. This ID:</p>
+  <ul>
+    <li>Is generated once and persists until you uninstall the app</li>
+    <li>Is not linked to your name, email, phone number, or any personal account</li>
+    <li>Cannot be used to identify you personally</li>
+    <li>Is reset when you reinstall the app</li>
+  </ul>
 
   <h3>2.2 Voice & Speech Data</h3>
   <ul>
@@ -66,6 +72,7 @@
     <li>Your last 4 messages and 4 AI responses (8 messages total)</li>
     <li>Stored in Firebase Firestore, linked only to your anonymous device ID</li>
     <li>Older messages are automatically deleted when new ones are added</li>
+    <li><strong>Automatically deleted after 30 days of inactivity</strong></li>
   </ul>
 
   <h3>2.4 Local Preferences</h3>
@@ -170,7 +177,7 @@
     </tr>
     <tr>
       <td>Conversation history</td>
-      <td>Last 8 messages only (auto-trimmed)</td>
+      <td>Automatically deleted after 30 days of inactivity</td>
     </tr>
     <tr>
       <td>Local preferences</td>
@@ -189,11 +196,12 @@
   <h2>5. Your Rights & Controls</h2>
   <ul>
     <li><strong>Disable crash reporting:</strong> Settings → Toggle off crash reports</li>
-    <li><strong>Delete local data:</strong> Uninstall the app</li>
-    <li><strong>Delete conversation history:</strong> Contact us at the email below</li>
+    <li><strong>Delete all your data:</strong> Uninstall the app. This removes all local data and generates a new anonymous ID upon reinstall, permanently disconnecting you from any stored conversation history</li>
+    <li><strong>Conversation history:</strong> Automatically deleted after 30 days of inactivity</li>
     <li><strong>Limit ad tracking:</strong> Use your device's privacy settings (iOS: Settings → Privacy → Tracking; Android: Settings → Privacy → Ads)</li>
     <li><strong>Disable notifications:</strong> Use your device's notification settings</li>
   </ul>
+  <p>For any other privacy concerns, contact us at <a href="mailto:moodshiftai.tech@gmail.com">moodshiftai.tech@gmail.com</a></p>
 
   <h2>6. Data Security</h2>
   <ul>
@@ -232,7 +240,7 @@
   <p>We may update this policy from time to time. Significant changes will be communicated through the app or app store listing.</p>
 
   <h2>11. Contact Us</h2>
-  <p>Questions or data deletion requests? Email us at:</p>
+  <p>Questions or privacy concerns? Email us at:</p>
   <p><a href="mailto:moodshiftai.tech@gmail.com">moodshiftai.tech@gmail.com</a></p>
 </div>
 </body>
