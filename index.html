@@ -14,22 +14,34 @@
     li { margin-bottom: 8px; }
     .container { background:#1e1e1e; padding:30px; border-radius:12px; }
     .highlight { background:#2d2d2d; padding:15px; border-radius:8px; margin:15px 0; }
+    .disclaimer { background:#2d1f3d; padding:20px; border-radius:12px; margin:20px 0; border-left: 4px solid #BB86FC; }
+    table { width:100%; border-collapse: collapse; margin-top:15px; }
+    th { padding:12px; text-align:left; border-bottom:1px solid #444; background:#2d2d2d; }
+    td { padding:12px; border-bottom:1px solid #333; }
     @media (prefers-color-scheme: light) {
       body { background:#ffffff; color:#000000; }
       .container { background:#f5f5f5; }
       .highlight { background:#e8e8e8; }
+      .disclaimer { background:#f3e8ff; border-left-color: #6200EE; }
       h1 { color:#6200EE; }
       h2 { color:#018786; }
       h3 { color:#B00020; }
       a { color:#018786; }
+      th { background:#e8e8e8; border-bottom-color: #ccc; }
+      td { border-bottom-color: #ddd; }
     }
   </style>
 </head>
 <body>
 <div class="container">
   <h1>Privacy Policy – MoodShift AI</h1>
-  <p><strong>Effective date:</strong> December 6, 2025</p>
-  <p><strong>Last updated:</strong> December 6, 2025</p>
+  <p><strong>Effective date:</strong> December 12, 2025</p>
+  <p><strong>Last updated:</strong> December 12, 2025</p>
+
+  <div class="disclaimer">
+    <h3>⚠️ AI Disclaimer</h3>
+    <p>MoodShift AI generates responses using artificial intelligence based on your voice input. These responses are for personal use only and may not always be accurate. They are not a substitute for professional advice, therapy, or medical guidance. Use your own judgment, and in case of a mental health crisis, contact your local hotline immediately.</p>
+  </div>
 
   <h2>1. Overview</h2>
   <p>MoodShift AI ("we", "our", "the app") is a voice-based mood shifting companion. This policy explains what data we collect, how we use it, and your rights.</p>
@@ -37,20 +49,16 @@
   <h2>2. Information We Collect</h2>
 
   <h3>2.1 Device Identifier</h3>
-  <p>We generate a random, anonymous device ID (UUID) to:</p>
-  <ul>
-    <li>Maintain conversation context between sessions</li>
-    <li>Cache your responses for faster playback</li>
-  </ul>
-  <p>This ID is not linked to your name, email, or any personal account.</p>
+  <p>We generate a random, anonymous device ID (UUID) to maintain conversation context between sessions. This ID is not linked to your name, email, or any personal account.</p>
 
   <h3>2.2 Voice & Speech Data</h3>
   <ul>
-    <li>Your microphone is <strong>only accessed</strong> when you hold the Speak button</li>
-    <li>Speech is converted to text using on-device or Apple/Google speech recognition</li>
-    <li>The transcribed text is sent to our AI service to generate a response</li>
-    <li><strong>No audio recordings are stored</strong> on your device or our servers</li>
+    <li>We only access the microphone when you hold the Speak button</li>
+    <li>Your voice is processed securely and never stored</li>
+    <li>No recordings are saved on your device or sent anywhere</li>
+    <li>Responses are AI-generated and for personal use only, not professional advice</li>
   </ul>
+  <p>Speech is converted to text using on-device or Apple/Google speech recognition. The transcribed text is sent to our AI service to generate a response. AI-generated audio responses are streamed directly to your device and are never stored.</p>
 
   <h3>2.3 Conversation History</h3>
   <p>To provide contextual responses, we store:</p>
@@ -63,18 +71,14 @@
   <h3>2.4 Local Preferences</h3>
   <p>Stored only on your device:</p>
   <ul>
-    <li>Language and voice preferences</li>
-    <li>Streak and usage statistics</li>
-    <li>Ad-free period status</li>
+    <li>Language and voice preferences (language, voice gender)</li>
+    <li>Streak and usage statistics (current streak, longest streak, total shifts, active days)</li>
+    <li>Peace mode status (ad-free period)</li>
     <li>Crystal voice activation status</li>
     <li>Crash reporting preference</li>
-  </ul>
-
-  <h3>2.5 Generated Audio</h3>
-  <ul>
-    <li>AI-generated voice responses are temporarily stored in Firebase Storage</li>
-    <li><strong>Automatically deleted after 24 hours</strong></li>
-    <li>Used only for playback caching to improve performance</li>
+    <li>Session count</li>
+    <li>Onboarding completion status</li>
+    <li>In-app review status</li>
   </ul>
 
   <h2>3. Third-Party Services</h2>
@@ -89,7 +93,8 @@
   <div class="highlight">
     <h3>3.2 Text-to-Speech – Amazon Polly</h3>
     <p><strong>What we send:</strong> AI-generated response text</p>
-    <p><strong>Purpose:</strong> Convert text to natural-sounding speech</p>
+    <p><strong>Purpose:</strong> Convert text to natural-sounding speech (standard, neural, or generative voices)</p>
+    <p><strong>Note:</strong> Audio is generated in real-time and streamed directly to your device. No audio files are stored.</p>
     <p><strong>Privacy:</strong> <a href="https://aws.amazon.com/privacy/" target="_blank">AWS Privacy Policy</a></p>
   </div>
 
@@ -101,48 +106,83 @@
   </div>
 
   <div class="highlight">
-    <h3>3.4 Crash Reporting – Firebase Crashlytics</h3>
+    <h3>3.4 Analytics – Firebase Analytics</h3>
+    <p><strong>What we collect:</strong> Anonymous usage data including:</p>
+    <ul>
+      <li>Session count and app opens</li>
+      <li>Feature usage (2× Stronger mode, Crystal Voice)</li>
+      <li>AI token usage counts (for service optimization)</li>
+      <li>Text-to-speech character counts and voice engine type</li>
+      <li>Country (derived from device locale)</li>
+    </ul>
+    <p><strong>Purpose:</strong> Improve app performance and understand feature usage</p>
+    <p><strong>Note:</strong> No personal information, voice recordings, or conversation content is collected</p>
+    <p><strong>Privacy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></p>
+  </div>
+
+  <div class="highlight">
+    <h3>3.5 Crash Reporting – Firebase Crashlytics</h3>
     <p><strong>What we collect:</strong> Anonymous crash data, device type, app version</p>
-    <p><strong>Additional context:</strong> Voice gender preference, language setting, streak count</p>
+    <p><strong>Additional context:</strong> Voice gender preference, language setting, streak count, crystal voice status</p>
     <p><strong>Control:</strong> You can disable crash reporting in Settings</p>
     <p><strong>Privacy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></p>
   </div>
 
   <div class="highlight">
-    <h3>3.5 Advertising – Google AdMob</h3>
+    <h3>3.6 Advertising – Google AdMob</h3>
     <p><strong>What is collected:</strong> Advertising identifiers (IDFA/GAID), device information</p>
-    <p><strong>Purpose:</strong> Display relevant ads and reward videos</p>
-    <p><strong>Control:</strong> Watch a reward video to remove ads for 24 hours</p>
+    <p><strong>Ad types used:</strong></p>
+    <ul>
+      <li>Banner ads (bottom of screen)</li>
+      <li>Interstitial ads (every 4th shift)</li>
+      <li>Rewarded interstitial ads (for 2× Stronger and Crystal Voice features)</li>
+      <li>Rewarded video ads (for Peace Mode - ad-free period)</li>
+    </ul>
+    <p><strong>Control:</strong> Watch a reward video to activate Peace Mode and remove ads for 10 minutes</p>
     <p><strong>Privacy:</strong> <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
   </div>
 
   <div class="highlight">
-    <h3>3.6 App Configuration – Firebase Remote Config</h3>
+    <h3>3.7 App Configuration – Firebase Remote Config</h3>
     <p><strong>What we collect:</strong> Anonymous app instance data</p>
-    <p><strong>Purpose:</strong> Deliver app updates and feature flags</p>
+    <p><strong>Purpose:</strong> Deliver app updates, feature flags, and force update notifications</p>
+  </div>
+
+  <div class="highlight">
+    <h3>3.8 App Security – Firebase App Check</h3>
+    <p><strong>What we collect:</strong> Device attestation tokens</p>
+    <p><strong>Purpose:</strong> Protect our backend services from abuse and ensure requests come from legitimate app installations</p>
+    <p><strong>Privacy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></p>
+  </div>
+
+  <div class="highlight">
+    <h3>3.9 Local Notifications</h3>
+    <p><strong>What we collect:</strong> Nothing - notifications are scheduled locally on your device</p>
+    <p><strong>Purpose:</strong> Weekly reminder notifications to maintain your streak (if you grant permission)</p>
+    <p><strong>Control:</strong> You can disable notifications in your device settings</p>
   </div>
 
   <h2>4. Data Retention</h2>
-  <table style="width:100%; border-collapse:collapse; margin:15px 0;">
-    <tr style="border-bottom:1px solid #444;">
-      <th style="text-align:left; padding:10px;">Data Type</th>
-      <th style="text-align:left; padding:10px;">Retention Period</th>
-    </tr>
-    <tr style="border-bottom:1px solid #333;">
-      <td style="padding:10px;">Conversation history</td>
-      <td style="padding:10px;">Last 8 messages only</td>
-    </tr>
-    <tr style="border-bottom:1px solid #333;">
-      <td style="padding:10px;">Generated audio files</td>
-      <td style="padding:10px;">24 hours (auto-deleted)</td>
-    </tr>
-    <tr style="border-bottom:1px solid #333;">
-      <td style="padding:10px;">Local preferences</td>
-      <td style="padding:10px;">Until you uninstall the app</td>
+  <table>
+    <tr>
+      <th>Data Type</th>
+      <th>Retention Period</th>
     </tr>
     <tr>
-      <td style="padding:10px;">Crash reports</td>
-      <td style="padding:10px;">Per Firebase retention policy (90 days)</td>
+      <td>Conversation history</td>
+      <td>Last 8 messages only (auto-trimmed)</td>
+    </tr>
+    <tr>
+      <td>Local preferences</td>
+      <td>Until you uninstall the app</td>
+    </tr>
+    <tr>
+      <td>Analytics data</td>
+      <td>Per Firebase retention policy (14 months)</td>
+    </tr>
+    <tr>
+      <td>Crash reports</td>
+      <td>Per Firebase retention policy (90 days)</td>
     </tr>
   </table>
 
@@ -151,7 +191,8 @@
     <li><strong>Disable crash reporting:</strong> Settings → Toggle off crash reports</li>
     <li><strong>Delete local data:</strong> Uninstall the app</li>
     <li><strong>Delete conversation history:</strong> Contact us at the email below</li>
-    <li><strong>Limit ad tracking:</strong> Use your device's privacy settings</li>
+    <li><strong>Limit ad tracking:</strong> Use your device's privacy settings (iOS: Settings → Privacy → Tracking; Android: Settings → Privacy → Ads)</li>
+    <li><strong>Disable notifications:</strong> Use your device's notification settings</li>
   </ul>
 
   <h2>6. Data Security</h2>
@@ -159,7 +200,9 @@
     <li>All data transmission uses HTTPS encryption</li>
     <li>Firebase services use Google Cloud security infrastructure</li>
     <li>API keys and secrets are stored securely in Firebase Secrets Manager</li>
+    <li>Firebase App Check protects backend services from unauthorized access</li>
     <li>No user accounts or passwords are collected</li>
+    <li>No audio recordings are stored - all audio is streamed in real-time</li>
   </ul>
 
   <h2>7. Children's Privacy</h2>
@@ -168,17 +211,29 @@
   <h2>8. International Data Transfers</h2>
   <p>Your data may be processed in:</p>
   <ul>
-    <li>United States (Firebase, Groq, AWS)</li>
+    <li>United States (Firebase, Groq, AWS Polly)</li>
     <li>Your device's region (for on-device speech recognition)</li>
   </ul>
 
-  <h2>9. Changes to This Policy</h2>
+  <h2>9. Supported Languages</h2>
+  <p>MoodShift AI supports the following languages:</p>
+  <ul>
+    <li>English (US & UK)</li>
+    <li>Hindi</li>
+    <li>Spanish</li>
+    <li>Chinese (Simplified)</li>
+    <li>French</li>
+    <li>German</li>
+    <li>Arabic</li>
+    <li>Japanese</li>
+  </ul>
+
+  <h2>10. Changes to This Policy</h2>
   <p>We may update this policy from time to time. Significant changes will be communicated through the app or app store listing.</p>
 
-  <h2>10. Contact Us</h2>
+  <h2>11. Contact Us</h2>
   <p>Questions or data deletion requests? Email us at:</p>
   <p><a href="mailto:moodshiftai.tech@gmail.com">moodshiftai.tech@gmail.com</a></p>
-
 </div>
 </body>
 </html>
